@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Lovelt - Tag - C6H12O6Mix Blog Site</title>
+        <link>http://localhost:1313/tags/lovelt/</link>
+        <description>Lovelt - Tag - C6H12O6Mix Blog Site</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>1955397994@qq.com (C6H12O6Mix)</managingEditor>
+            <webMaster>1955397994@qq.com (C6H12O6Mix)</webMaster><lastBuildDate>Mon, 24 Jun 2024 00:12:03 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/lovelt/" rel="self" type="application/rss+xml" /><item>
+    <title>搭建博客 Github&#43;Hugo&#43;Lovelt</title>
+    <link>http://localhost:1313/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2github-hugo-lovlet/</link>
+    <pubDate>Mon, 24 Jun 2024 00:12:03 &#43;0800</pubDate>
+    <author>C6H12O6Mix</author>
+    <guid>http://localhost:1313/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2github-hugo-lovlet/</guid>
+    <description><![CDATA[如何用 GitHub Pages + Hugo + Lovelt 搭建个人博客 1. 概念，搭建思路和运行环境 1.1 什么是 GitHub Pages？ GitHub Pages 是 GitHub 提供的免费托管服务，用于托管静态网站。无论是个人、项目]]></description>
+</item>
+</channel>
+</rss>
