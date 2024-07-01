@@ -241,7 +241,7 @@ GitHub Actions 是一种  CI/CD 工具（`Continuous Integration`-持续集成�
 3. **任务（Jobs）**：任务包含多个步骤（steps），在独立的虚拟环境中运行。
 4. **步骤（Steps）**：步骤是具体操作，如运行命令、执行脚本等。
 
-### 8.2 利用 GitHub Action 进行静态博客的持续集成与部署
+### 8.2 生成 Actions secrets
 
 1. 生成 Personal access tokens 首先点击 GitHub 头像在下拉栏里进入 Setting -> Developer Settings -> Personal access tokens -> Tokens (classic)
 
@@ -262,9 +262,88 @@ GitHub Actions 是一种  CI/CD 工具（`Continuous Integration`-持续集成�
 
 <center><font color=silver>img-8.2</font></center>
 
+### 8.3 配置 acitons 文件
+
+1. 在本地源仓库文件夹的根目录新建两个文件夹 `./.github/workflows`，在 `workflows` 里新建一个后缀为 `xxx.yml` 的配置文件，其中名字自取，这里暂时命名为 `ghpages.yml`。
+
+><center><img src="pic/img-13.png" width="960"/></center>
+
+<center><font color=silver>img-8.3</font></center>
+
+2. 修改 `ghpages.yml` 的配置，其中需要修改的部分：
+   - `external_repository`： 修改为自己的 GitHub page 仓库
+   - `personal_token`：${{ secrets.XXX }} XXX 修改成上面生成 Actions secrets 步骤中取得的名称。
+
+```yaml
+name: github pages # 名字自取
+
+on:
+  push:
+    branches:
+      - main  # 这里的意思是当 main分支发生push的时候，运行下面的jobs，这里先改为github-actions
+
+jobs:
+  deploy: # 任务名自取
+    runs-on: ubuntu-latest	# 在什么环境运行任务
+    steps:
+      - uses: actions/checkout@v2	# 引用actions/checkout这个action，与所在的github仓库同名
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive) 获取submodule主题
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo	# 步骤名自取
+        uses: peaceiris/actions-hugo@v2	# hugo官方提供的action，用于在任务环境中获取hugo
+        with:
+          hugo-version: 'latest'	# 获取最新版本的hugo
+          # extended: true
+
+      - name: Build
+        run: hugo --minify	# 使用hugo构建静态网页
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3	# 一个自动发布github pages的action
+        with:
+          # github_token: ${{ secrets.GITHUB_TOKEN }} 该项适用于发布到源码相同repo的情况，不能用于发布到其他repo
+          external_repository: C6H12O6Mix/c6h12o6mix.github.io	# 发布到哪个repo
+          personal_token: ${{ secrets.BLOG_ACTION }}	# 发布到其他repo需要提供上面生成的personal access token
+          publish_dir: ./public	# 注意这里指的是要发布哪个文件夹的内容，而不是指发布到目的仓库的什么位置，因为hugo默认生成静态网页到public文件夹，所以这里发布public文件夹里的内容
+          publish_branch: main	# 发布到哪个branch
+```
+
+### 8.4 推送代码到源仓库
+
+> 注意：在推送代码之前，需要将 `./themes/LoveIt` 下的 `.git` 以及 `.github` 文件夹的内容。否则，GitHub 会将 `LoveIt` 文件夹识别为子模块，导致 GitHub Action 在部署时，无法识别 `./themes/LoveIt` 下的文件，从而部署失败。
+
+1. 将 `Blog` 文件夹初始化为 Git 仓库，并设置默认主分支为 main。这么做的原因是：GitHub 创建仓库时生成的默认主分支名是 main 用 `git init` 初始化 Git 仓库时创建的默认主分支名是 `master` 将 git init 创建的 master 修改成 main ，再推送给远端仓库，这样才不会报错。
+
+```bash
+git init -b main
+```
+
+2. 将 `public` 文件夹关联远程 GitHub Pages 仓库，使用 GitHub Pages 仓库的 SSH 链接。
+
+```bash
+git remote add origin git@github.com:C6H12O6Mix/Blog.git
+```
+
+3. 推送本地文件到远程仓库
+
+```bash
+git pull --rebase origin main
+git add .
+git commit -m "...(修改的信息)"
+git push origin main
+```
+
+4. 推送完成之后到 GitHub 仓库中的 Actions 中就可以看到 runs 运行成功，然后可以通过类似以下链接，访问你的博客了。
+
+```http
+https://c6h12o6mix.github.io/
+```
+
+
+
 ## Reference
 
 - [如何用 GitHub Pages + Hugo 搭建个人博客 · KrislinBlog](https://krislinzhao.github.io/docs/create-a-wesite-using-github-pages-and-hugo/#4-使用-hugo-创建网站)
-
-s
 
