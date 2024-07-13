@@ -26,6 +26,8 @@ Hugo 主题 LoveIt 是一个简洁而优雅的主题，专为博客和个人网�
 
 > 目的：将博客源文件单独存放到私有仓库里面，避免访客直接从公共的 GitHub Pages 仓库中获取文章源文件。
 
+<br>
+
 ## 2. 创建 GitHub 仓库以及本地仓库
 
 ### 2.1 创建博客源仓库
@@ -73,6 +75,8 @@ git clone git@github.com:C6H12O6Mix/Blog.git
 
 <center><font color=silver>img-2.5</font></center>
 
+<br>
+
 ## 3. Hugo 的安装和配置
 
 ### 3.1 下载安装 Hugo
@@ -111,6 +115,8 @@ git clone git@github.com:C6H12O6Mix/Blog.git
 
 <center><font color=silver>img-3.3</font></center>
 
+<br>
+
 ## 4. 使用 Hugo 创建网站
 
 1. 进入刚刚克隆下来的博客源仓库文件夹（比如：我的博客源仓库文件夹名是 `Blog`，则在 `D:\File\BlogSorce` ），在这个文件夹里用 Hugo 创建一个网站文件夹。
@@ -141,6 +147,8 @@ my-website/
 - **static/**： 静态文件目录，存放静态资源文件（如图像、CSS、JavaScript），这些文件在生成网站时将直接复制到公共目录，保持原样提供给浏览器。
 - **themes/**： 主题目录，可以将外部主题克隆到这个目录中，或者创建和存放自定义主题。
 - **hugo.toml**： 配置文件，包含网站的基本配置选项，例如网站标题、语言、主题等。通常用于设置全局配置，如站点信息、菜单、参数等。
+
+<br>
 
 ## 5. 安装配置 Hugo 主题 LoveIt
 
@@ -198,6 +206,8 @@ title = "xxx"
 	...
 ```
 
+<br>
+
 ## 6. 用 Hugo 创建文章
 
 推荐写法：在博客项目根目录，输入以下命令（注意文件名不要输入空格或者其他特殊字符）：
@@ -217,6 +227,8 @@ hugo new ./posts/新建文件夹(最好命名为文章主题)/index.md
 <img src="img/img-01.png"/>
 ```
 
+<br>
+
 ## 7. 本地调试和预览
 
 1. 在发布到网站前可以在本地预览网站或内容的效果，运行命令：
@@ -227,6 +239,8 @@ hugo server
 
 2. 也可以在本地编辑 Markdown 文件时，通过 `hugo server` 来实时预览显示效果。
 3. `hugo server` 运行成功后，可以在 `http://localhost:1313/` 中预览
+
+<br>
 
 ## 8. 发布内容
 
@@ -341,7 +355,7 @@ git push origin main
 https://c6h12o6mix.github.io/
 ```
 
-
+<br>
 
 ## Reference
 
