@@ -1,16 +1,1 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Work - Category - C6H12O6Mix Blog Site</title>
-        <link>http://localhost:1313/categories/work/</link>
-        <description>Work - Category - C6H12O6Mix Blog Site</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>1955397994@qq.com (C6H12O6Mix)</managingEditor>
-            <webMaster>1955397994@qq.com (C6H12O6Mix)</webMaster><lastBuildDate>Wed, 26 Jun 2024 11:54:49 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/work/" rel="self" type="application/rss+xml" /><item>
-    <title>Java后端面试</title>
-    <link>http://localhost:1313/java%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95/</link>
-    <pubDate>Wed, 26 Jun 2024 11:54:49 &#43;0800</pubDate>
-    <author>C6H12O6Mix</author>
-    <guid>http://localhost:1313/java%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95/</guid>
-    <description><![CDATA[Java 后端面试 MySQL MySQL高频面试题 MySQL查询优化过程 面试官：MySQL 上亿大表，如何深度优化？ 老司机总结的12条 SQL 优化方案（非常实用） My]]></description>
-</item>
-</channel>
-</rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Work - Category - C6H12O6Mix Blog Site</title><link>http://example.org/categories/work/</link><description>Work - Category - C6H12O6Mix Blog Site</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>1955397994@qq.com (C6H12O6Mix)</managingEditor><webMaster>1955397994@qq.com (C6H12O6Mix)</webMaster><lastBuildDate>Wed, 26 Jun 2024 11:54:49 +0800</lastBuildDate><atom:link href="http://example.org/categories/work/" rel="self" type="application/rss+xml"/><item><title>Java后端面试</title><link>http://example.org/java%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95/</link><pubDate>Wed, 26 Jun 2024 11:54:49 +0800</pubDate><author>C6H12O6Mix</author><guid>http://example.org/java%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95/</guid><description>Java 后端初步学习 一、基础核心 1. 线程 1.1 java 线程创建方式 1) 继承 Thread 类 重写的是 run() 方法，而不是 start() 方法，但是占用了继承的名额，Java 中的类是单继承的 1 2 3</description></item></channel></rss>

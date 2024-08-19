@@ -119,8 +119,8 @@ git clone git@github.com:C6H12O6Mix/Blog.git
 
 ## 4. 使用 Hugo 创建网站
 
-1. 进入刚刚克隆下来的博客源仓库文件夹（比如：我的博客源仓库文件夹名是 `Blog`，则在 `D:\File\BlogSorce` ），在这个文件夹里用 Hugo 创建一个网站文件夹。
-2. 用 Hugo 创建网站文件夹的命令是 `hugo new site 网站名字`。
+1. 进入刚刚克隆下来的博客源仓库文件夹（比如：博主是在 `D:\File\BlogSorce` ），在这个文件夹里用 Hugo 创建一个网站文件夹（Blog）。
+2. 用 Hugo 创建网站文件夹的命令是 `hugo new site 网站名字（Blog）`。
 3. 用 Hugo 创建的网站共有 8 个文件夹和 2 个文件，这些文件分别表示：
 
 ```
@@ -154,7 +154,7 @@ my-website/
 
 ### 5.1 安装 LoveIt
 
-1. 位于博客项目**根目录**（D:\File\BlogSorce），输入以下指令：
+1. 位于博客项目**根目录**（D:\File\BlogSorce\Blog），输入以下指令：
 
 ```bash
 git clone https://github.com/dillonzq/LoveIt.git themes/LoveIt
